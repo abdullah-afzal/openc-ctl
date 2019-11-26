@@ -1,0 +1,16 @@
+metadata:
+  name: openc-cli
+  description: Generate boilarplate for openc pipelines
+  version: 0.0.1
+  maintainers:
+    - Oleg Sucharevich
+commands:
+- name: generate
+  flags:
+    - name: name
+      type: string
+      envVar: PIPELINE_NAME
+  arg:
+    name: spec
+    rules:
+      - exactlyOne
