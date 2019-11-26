@@ -2,7 +2,7 @@
 package main
 
 import (
-	cmd "github.com/olegsu/openc-cli/cmd"
+	cmd "github.com/olegsu/openc-ctl/cmd"
 )
 
 func main() {

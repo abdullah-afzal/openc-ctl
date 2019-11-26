@@ -5,13 +5,13 @@ package cmd
 
 import (
 	
-	handler "github.com/olegsu/openc-cli/pkg/generate"
+	handler "github.com/olegsu/openc-ctl/pkg/generate"
 	
 	"github.com/spf13/cobra"
 )
 
 var generateCmdOptions struct {
-	name string
+	user string
 	
 }
 
@@ -34,10 +34,10 @@ var generateCmd = &cobra.Command{
 	},
 	Long: "Generate boilarplate for openc pipelines",
 	PreRun: func(cmd *cobra.Command, args []string) {
-		cnf.Set("spec", args )
+		cnf.Set("name", args )
 		rootCmd.PreRun(cmd, args)
 		
-		cnf.Set("name", generateCmdOptions.name)
+		cnf.Set("user", generateCmdOptions.user)
 		
 	},
 }
@@ -46,8 +46,8 @@ var generateCmd = &cobra.Command{
 
 
 func init() {
-	cnf.BindEnv("name", "PIPELINE_NAME")
+	cnf.BindEnv("user", "USER")
 
-	generateCmd.PersistentFlags().StringVar(&generateCmdOptions.name, "name", cnf.GetString("name"), " [$PIPELINE_NAME]")
+	generateCmd.PersistentFlags().StringVar(&generateCmdOptions.user, "user", cnf.GetString("user"), " [$USER]")
 	rootCmd.AddCommand(generateCmd)
 }

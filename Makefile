@@ -1,4 +1,4 @@
-outfile = openc-cli
+outfile = openc-ctl
 
 .PHONY: build
 build:

@@ -1,5 +1,5 @@
 metadata:
-  name: openc-cli
+  name: openc-ctl
   description: Generate boilarplate for openc pipelines
   version: 0.0.1
   maintainers:
@@ -7,10 +7,10 @@ metadata:
 commands:
 - name: generate
   flags:
-    - name: name
+    - name: user
       type: string
-      envVar: PIPELINE_NAME
+      envVar: USER
   arg:
-    name: spec
+    name: name
     rules:
       - exactlyOne

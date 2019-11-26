@@ -18,7 +18,7 @@ var rootCmdOptions struct {
 }
 
 var rootCmd = &cobra.Command{
-	Use:     "openc-cli",
+	Use:     "openc-ctl",
 	Version: "0.0.1",
 	Long: "Generate boilarplate for openc pipelines",
 	PreRun: func(cmd *cobra.Command, args []string) {
