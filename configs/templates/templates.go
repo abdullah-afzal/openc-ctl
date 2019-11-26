@@ -16,14 +16,14 @@ import (
 func main() {
 
 	meta := openc.PipelineMetadata{
-		Name: "Hello World",
+		Name: "hello-world",
 	}
 
 	spec := openc.PipelineSpec{
 		Tasks: []openc.Task{
 			openc.Task{
 					Metadata: openc.TaskMetadata{
-						Name: "echo",
+						Name: "hello-world",
 					},
 					Spec: openc.TaskSpec{
 						Condition: []openc.Condition{
@@ -38,8 +38,8 @@ func main() {
 						Command:  "echo",
 						Arguments: []openc.Argument{
 							openc.Argument{
-								Name:  "Echo",
-								Value: fmt.Sprintf("Running task echo"),
+								Name:  "hello-world",
+								Value: fmt.Sprintf("Hello World"),
 							},
 						},
 					},
